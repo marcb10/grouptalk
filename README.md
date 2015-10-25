@@ -1,0 +1,2 @@
+# Group Talk
+_**Group Talk**_ is an practice project developed at course "Diseño de Servicios y Aplicaciones" (Service and Applications Design) of Castelldefels School of Telecommunications and Aerospace Engineering (EETAC).

@@ -13,4 +13,6 @@ public interface GrupoDAO {
     public Grupo getGrupoById(String id) throws SQLException;
     public ColeccionGrupo getGrupos() throws SQLException;
     public boolean deleteGrupo(String id) throws SQLException;
+    public Grupo suscribirGrupo(String id, String idu) throws SQLException;
+    public boolean dessuscribirGrupo(String id, String idu) throws SQLException;
 }

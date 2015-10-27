@@ -19,7 +19,6 @@ public class GrupoDAOImpl implements GrupoDAO {
         String id = null;
         try {
             connection = Database.getConnection();
-
             stmt = connection.prepareStatement(UserDAOQuery.UUID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next())
@@ -29,8 +28,8 @@ public class GrupoDAOImpl implements GrupoDAO {
 
             stmt = connection.prepareStatement(GrupoDAOQuery.CREATE_GRUPO);
             stmt.setString(1, id);
-            stmt.setString(2, nombre);
-            stmt.setString(3, userid);
+            stmt.setString(2, userid);
+            stmt.setString(3, nombre);
             stmt.executeUpdate();
         } catch (SQLException e) {
             throw e;
@@ -55,13 +54,14 @@ public class GrupoDAOImpl implements GrupoDAO {
 
             stmt = connection.prepareStatement(GrupoDAOQuery.GET_GRUPO_BY_ID);
             stmt.setString(1, id);
-
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 grupo = new Grupo();
+
+
                 grupo.setId(rs.getString("id"));
-                grupo.setNombre(rs.getString("nombre"));
                 grupo.setUserid(rs.getString("userid"));
+                grupo.setNombre(rs.getString("nombre"));
                 grupo.setCreationTimestamp(rs.getTimestamp("creation_timestamp").getTime());
                 grupo.setLastModified(rs.getTimestamp("last_modified").getTime());
             }
@@ -71,8 +71,10 @@ public class GrupoDAOImpl implements GrupoDAO {
             if (stmt != null) stmt.close();
             if (connection != null) connection.close();
         }
+
         return grupo;
     }
+
 
     @Override
     public ColeccionGrupo getGrupos() throws SQLException {
@@ -128,5 +130,58 @@ public class GrupoDAOImpl implements GrupoDAO {
             if (connection != null) connection.close();
         }
     }
+
+    @Override
+    public Grupo suscribirGrupo(String id, String idu) throws SQLException {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        String idgu = null;
+        try {
+            connection = Database.getConnection();
+            stmt = connection.prepareStatement(UserDAOQuery.UUID);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next())
+                idgu = rs.getString(1);
+            else
+                throw new SQLException();
+
+            stmt = connection.prepareStatement(GrupoDAOQuery.SUBS_GRUPO);
+            stmt.setString(1, idgu);
+            stmt.setString(2, id);
+            stmt.setString(3, idu);
+            stmt.executeUpdate();
+            return getGrupoById(id);
+
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (connection != null) connection.close();
+        }
+
+    }
+
+    @Override
+    public boolean dessuscribirGrupo(String id, String idu) throws SQLException {
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        try {
+            connection = Database.getConnection();
+
+            stmt = connection.prepareStatement(GrupoDAOQuery.DES_GRUPO);
+            stmt.setString(1, id);
+            stmt.setString(2, idu);
+
+
+            int rows = stmt.executeUpdate();
+            return (rows == 1);
+        } catch (SQLException e) {
+            throw e;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (connection != null) connection.close();
+        }
+    }
+
 
 }

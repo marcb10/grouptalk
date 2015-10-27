@@ -2,6 +2,7 @@ package edu.upc.eetac.dsa.grouptalk.dao;
 
 import edu.upc.eetac.dsa.grouptalk.entity.ColeccionTema;
 import edu.upc.eetac.dsa.grouptalk.entity.Grupo;
+import edu.upc.eetac.dsa.grouptalk.entity.RelacionGrupoUsuario;
 import edu.upc.eetac.dsa.grouptalk.entity.Tema;
 
 import java.sql.Connection;
@@ -81,7 +82,7 @@ public class TemaDAOImpl implements TemaDAO {
     }
 
     @Override
-    public ColeccionTema getTemas() throws SQLException {
+    public ColeccionTema getTemas(String id) throws SQLException {
         ColeccionTema coleccionTema = new ColeccionTema();
 
         Connection connection = null;
@@ -89,6 +90,7 @@ public class TemaDAOImpl implements TemaDAO {
         try {
             connection = Database.getConnection();
             stmt = connection.prepareStatement(TemaDAOQuery.GET_TEMAS);
+            stmt.setString(1, id);
 
             ResultSet rs = stmt.executeQuery();
             boolean first = true;
@@ -163,6 +165,35 @@ public class TemaDAOImpl implements TemaDAO {
             if (connection != null)
                 connection.close();
         }
+    }
+
+    @Override
+    public RelacionGrupoUsuario getRelacion(String id, String idu) throws SQLException {
+        RelacionGrupoUsuario relacionGrupoUsuario = null;
+
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        try {
+            connection = Database.getConnection();
+
+            stmt = connection.prepareStatement(TemaDAOQuery.GET_RELACION);
+            stmt.setString(1, id);
+            stmt.setString(2, idu);
+
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                relacionGrupoUsuario = new RelacionGrupoUsuario();
+                relacionGrupoUsuario.setId(rs.getString("id"));
+                relacionGrupoUsuario.setGrupoid(rs.getString("grupoid"));
+                relacionGrupoUsuario.setUserid(rs.getString("userid"));
+            }
+        } catch (SQLException e){
+            throw e;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (connection != null) connection.close();
+        }
+        return relacionGrupoUsuario;
     }
 
 }

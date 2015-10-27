@@ -1,6 +1,7 @@
 package edu.upc.eetac.dsa.grouptalk.dao;
 
 import edu.upc.eetac.dsa.grouptalk.entity.ColeccionTema;
+import edu.upc.eetac.dsa.grouptalk.entity.RelacionGrupoUsuario;
 import edu.upc.eetac.dsa.grouptalk.entity.Tema;
 
 import java.sql.SQLException;
@@ -11,7 +12,8 @@ import java.sql.SQLException;
 public interface TemaDAO {
     public Tema createTema(String grupoid, String userid, String subject,String content) throws SQLException;
     public Tema getTemaById(String id) throws SQLException;
-    public ColeccionTema getTemas() throws SQLException;
+    public ColeccionTema getTemas(String id) throws SQLException;
     public Tema updateTema(String id, String subject, String content) throws SQLException;
     public boolean deleteTema(String id) throws SQLException;
+    public RelacionGrupoUsuario getRelacion(String id, String idu) throws SQLException;
 }

@@ -45,7 +45,8 @@ public class AuthRequestFilter implements ContainerRequestFilter {
                 @Override
                 public boolean isUserInRole(String s) {
                     List<Role> roles = null;
-                    if (principal != null) roles = principal.getRoles();
+                    if (principal != null)
+                        roles = principal.getRoles();
                     return (roles.size() > 0 && roles.contains(Role.valueOf(s)));
                 }
 

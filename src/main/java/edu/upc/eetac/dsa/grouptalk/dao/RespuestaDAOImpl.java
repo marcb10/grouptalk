@@ -1,6 +1,7 @@
 package edu.upc.eetac.dsa.grouptalk.dao;
 
 import edu.upc.eetac.dsa.grouptalk.entity.ColeccionRespuesta;
+import edu.upc.eetac.dsa.grouptalk.entity.RelacionGrupoUsuario;
 import edu.upc.eetac.dsa.grouptalk.entity.Respuesta;
 
 import java.sql.Connection;
@@ -26,13 +27,16 @@ public class RespuestaDAOImpl implements RespuestaDAO {
                 id = rs.getString(1);
             else
                 throw new SQLException();
-
             stmt = connection.prepareStatement(RespuestaDAOQuery.CREATE_RESPUESTA);
             stmt.setString(1, id);
             stmt.setString(2, idtema);
             stmt.setString(3, userid);
             stmt.setString(4, content);
+
+
             stmt.executeUpdate();
+
+
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -56,7 +60,6 @@ public class RespuestaDAOImpl implements RespuestaDAO {
 
             stmt = connection.prepareStatement(RespuestaDAOQuery.GET_RESPUESTA_BY_ID);
             stmt.setString(1, id);
-
             ResultSet rs = stmt.executeQuery();
             if (rs.next()) {
                 respuesta = new Respuesta();
@@ -78,7 +81,7 @@ public class RespuestaDAOImpl implements RespuestaDAO {
     }
 
     @Override
-    public ColeccionRespuesta getRespuestas() throws SQLException {
+    public ColeccionRespuesta getRespuestas(String id) throws SQLException {
         ColeccionRespuesta coleccionRespuesta = new ColeccionRespuesta();
 
         Connection connection = null;
@@ -86,7 +89,7 @@ public class RespuestaDAOImpl implements RespuestaDAO {
         try {
             connection = Database.getConnection();
             stmt = connection.prepareStatement(RespuestaDAOQuery.GET_RESPUESTA);
-
+            stmt.setString(1, id);
             ResultSet rs = stmt.executeQuery();
             boolean first = true;
             while (rs.next()) {
@@ -159,6 +162,34 @@ public class RespuestaDAOImpl implements RespuestaDAO {
             if (connection != null)
                 connection.close();
         }
+    }
+    @Override
+    public RelacionGrupoUsuario getRelacion(String id, String idu) throws SQLException {
+        RelacionGrupoUsuario relacionGrupoUsuario = null;
+
+        Connection connection = null;
+        PreparedStatement stmt = null;
+        try {
+            connection = Database.getConnection();
+
+            stmt = connection.prepareStatement(TemaDAOQuery.GET_RELACION);
+            stmt.setString(1, id);
+            stmt.setString(2, idu);
+
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                relacionGrupoUsuario = new RelacionGrupoUsuario();
+                relacionGrupoUsuario.setId(rs.getString("id"));
+                relacionGrupoUsuario.setGrupoid(rs.getString("grupoid"));
+                relacionGrupoUsuario.setUserid(rs.getString("userid"));
+            }
+        } catch (SQLException e){
+            throw e;
+        } finally {
+            if (stmt != null) stmt.close();
+            if (connection != null) connection.close();
+        }
+        return relacionGrupoUsuario;
     }
 }
 

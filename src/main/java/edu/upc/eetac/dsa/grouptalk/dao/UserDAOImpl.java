@@ -23,9 +23,7 @@ public class UserDAOImpl implements UserDAO {
             User user = getUserByLoginid(loginid);
             if (user != null)
                 throw new UserAlreadyExistsException();
-
             connection = Database.getConnection();
-
             stmt = connection.prepareStatement(UserDAOQuery.UUID);
             ResultSet rs = stmt.executeQuery();
             if (rs.next())
@@ -45,11 +43,12 @@ public class UserDAOImpl implements UserDAO {
             stmt.executeUpdate();
 
             stmt.close();
-            stmt = connection.prepareStatement(UserDAOQuery.ASSIGN_ROLE_REGISTERED);
+            stmt = connection.prepareStatement(UserDAOQuery.ASSIGN_ROLE_ADMIN);
             stmt.setString(1, id);
             stmt.executeUpdate();
 
             connection.commit();
+
         } catch (SQLException e) {
             throw e;
         } finally {
@@ -76,7 +75,6 @@ public class UserDAOImpl implements UserDAO {
             stmt.setString(1, email);
             stmt.setString(2, fullname);
             stmt.setString(3, id);
-
             int rows = stmt.executeUpdate();
             if (rows == 1)
                 user = getUserById(id);

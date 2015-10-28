@@ -43,7 +43,7 @@ public class UserDAOImpl implements UserDAO {
             stmt.executeUpdate();
 
             stmt.close();
-            stmt = connection.prepareStatement(UserDAOQuery.ASSIGN_ROLE_ADMIN);
+            stmt = connection.prepareStatement(UserDAOQuery.ASSIGN_ROLE_REGISTERED);
             stmt.setString(1, id);
             stmt.executeUpdate();
 

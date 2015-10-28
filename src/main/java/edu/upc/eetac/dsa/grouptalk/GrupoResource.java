@@ -42,7 +42,7 @@ public class GrupoResource {
     @Path("/{id}")
     @POST
     @Produces(GroupTalkMediaType.GROUPTALK_GRUPO)
-    public void suscribirGrupo(@PathParam("id") String id, @Context UriInfo uriInfo)  {
+    public void suscribirGrupo(@PathParam("id") String id)  {
 
         GrupoDAO grupoDAO = new GrupoDAOImpl();
         AuthToken authenticationToken = null;
@@ -98,7 +98,7 @@ public class GrupoResource {
     }
     @Path("/su={id}")
     @DELETE
-    public void desuscribirGrupo(@PathParam("id") String id, @Context UriInfo uriInfo) throws URISyntaxException {
+    public void desuscribirGrupo(@PathParam("id") String id) throws URISyntaxException {
 
         GrupoDAO grupoDAO = new GrupoDAOImpl();
         String userid = securityContext.getUserPrincipal().getName();

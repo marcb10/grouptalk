@@ -2,51 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="374e36d2-cacb-442d-bbe6-f0e957b1cb31" name="Default" comment="">
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\.name" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\compiler.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\copyright\profiles_settings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\encodings.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_fasterxml_jackson_core_jackson_annotations_2_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_fasterxml_jackson_core_jackson_core_2_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_fasterxml_jackson_core_jackson_databind_2_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_base_2_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_fasterxml_jackson_jaxrs_jackson_jaxrs_json_provider_2_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_fasterxml_jackson_module_jackson_module_jaxb_annotations_2_5_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__com_zaxxer_HikariCP_java6_2_3_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__javax_annotation_javax_annotation_api_1_2.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__javax_el_javax_el_api_2_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__javax_validation_validation_api_1_1_0_Final.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__javax_ws_rs_javax_ws_rs_api_2_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__junit_junit_4_9.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__log4j_log4j_1_2_17.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__mysql_mysql_connector_java_5_1_36.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_grizzly_grizzly_framework_2_3_22.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_grizzly_grizzly_http_2_3_22.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_grizzly_grizzly_http_server_2_3_22.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_hk2_external_aopalliance_repackaged_2_4_0_b31.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_hk2_external_javax_inject_2_4_0_b31.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_hk2_hk2_api_2_4_0_b31.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_hk2_hk2_locator_2_4_0_b31.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_hk2_hk2_utils_2_4_0_b31.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_hk2_osgi_resource_locator_1_0_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_bundles_repackaged_jersey_guava_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_containers_jersey_container_grizzly2_http_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_core_jersey_client_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_core_jersey_common_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_core_jersey_server_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_ext_jersey_declarative_linking_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_ext_jersey_entity_filtering_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_media_jersey_media_jaxb_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_jersey_media_jersey_media_json_jackson_2_21.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_glassfish_web_javax_el_2_2_4.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_hamcrest_hamcrest_core_1_1.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_javassist_javassist_3_18_2_GA.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_slf4j_slf4j_api_1_7_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\libraries\Maven__org_slf4j_slf4j_log4j12_1_7_12.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\misc.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\modules.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\uiDesigner.xml" afterPath="" />
-      <change type="DELETED" beforePath="C:\dsa-projects\grouptalk-project\service\.idea\vcs.xml" afterPath="" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="grouptalk-service.iws" />
     <ignored path=".idea/workspace.xml" />
